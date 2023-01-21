@@ -115,11 +115,15 @@ typedef volatile uint8_t & reg8_t;
   _FL_IO(N,13)
 #endif
 
-#if defined(__AVR_ATtiny85__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny25__)
+#if defined(__AVR_ATtiny85__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny13__) || defined(__AVR_ATtiny13A__)
 
 #if defined(__AVR_ATtiny25__)
 #pragma message "ATtiny25 has very limited storage. This library could use up to more than 100% of its flash size"
 #endif
+#if defined(__AVR_ATtiny13__) || defined(__AVR_ATtiny13A__)
+#pragma message "ATtiny13 has very limited storage. This library could use up to more than 100% of its flash size"
+#endif
+
 
 #define MAX_PIN 5
 
